@@ -38,15 +38,15 @@ class User {
     );
     mongoose.model('users', schema);
   }
-  // comparing password
-  comparePassword(candidatePassword, cb) {
-    bcrypt.compare(candidatePassword, this.password, (err, isMatch) => {
-      if (err) {
-        return cb(err);
-      }
-      cb(null, isMatch);
-    });
-  }
+  // // comparing password
+  // comparePassword(candidatePassword, cb) {
+  //   bcrypt.compare(candidatePassword, this.password, (err, isMatch) => {
+  //     if (err) {
+  //       return cb(err);
+  //     }
+  //     cb(null, isMatch);
+  //   });
+  // }
   getInstance() {
     this.initSchema();
     return mongoose.model('users');

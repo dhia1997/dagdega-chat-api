@@ -9,9 +9,9 @@ class Service {
     this.update = this.update.bind(this);
     this.delete = this.delete.bind(this);
   }
-  async get(id) {
+  async get(query) {
     try {
-      let item = await this.model.findById(id);
+      let item = await this.model.findOne(query);
       if (!item)
         return {
           error: true,

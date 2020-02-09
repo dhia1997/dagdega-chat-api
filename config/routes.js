@@ -9,7 +9,8 @@ export default (server) => {
   server.delete(`/api/message/:id`, MessageController.delete);
   server.get(`/api/user`, UserController.getAll);
   server.get(`/api/user/:params`, UserController.get);
-  server.post(`/api/user`, UserController.insert)
+  server.post(`/api/signup`, UserController.signup)
+  server.post(`/api/login`, UserController.login)
   server.put(`/api/user/:id`, UserController.update);
   server.delete(`/api/user/:id`, UserController.delete);
 }
