@@ -3,12 +3,36 @@ import mongoose from "mongoose";
 class Service {
   constructor(model) {
     this.model = model;
+    this.get = this.get.bind(this);
     this.getAll = this.getAll.bind(this);
     this.insert = this.insert.bind(this);
     this.update = this.update.bind(this);
     this.delete = this.delete.bind(this);
   }
+  async get(id) {
+    try {
+      let item = await this.model.findById(id);
+      if (!item)
+        return {
+          error: true,
+          statusCode: 404,
+          message: "item not found"
+        };
 
+      return {
+        error: false,
+        deleted: true,
+        statusCode: 202,
+        item
+      };
+    } catch (error) {
+      return {
+        error: true,
+        statusCode: 500,
+        error
+      };
+    }
+  }
   async getAll(query) {
     let { skip, limit } = query;
 

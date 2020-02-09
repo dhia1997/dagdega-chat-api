@@ -1,6 +1,6 @@
 import Controller from  './Controller';
 import MessageService from  "./../services/MessageService";
-import Post from  "./../models/Post";
+import Message from  "./../models/Message";
 const messageService = new MessageService(
   new Message().getInstance()
 );
