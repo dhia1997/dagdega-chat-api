@@ -6,7 +6,8 @@ class User {
     const schema = new Schema(
       {
         username: { type: String, required: true, index: { unique: true } },
-        password: { type: String, required: true }
+        password: { type: String, required: true },
+        role: { type: String, enum: ['admin', 'normal'], default: 'normal' }
       },
       { timestamps: true }
     );
