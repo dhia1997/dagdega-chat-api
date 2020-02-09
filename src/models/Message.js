@@ -6,7 +6,7 @@ class Message {
   initSchema() {
     const schema = new Schema(
       {
-        auhtor: {
+        author: {
           type: mongoose.Types.ObjectId,
           ref: 'User',
           required: true
@@ -15,7 +15,8 @@ class Message {
         content: {
           type: String,
           required: true
-        }
+        },
+        seenBy: [{ type: mongoose.Types.ObjectId, ref: 'User' }] // user had seen the message
       },
       { timestamps: true }
     );
