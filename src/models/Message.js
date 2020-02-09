@@ -1,5 +1,5 @@
 import mongoose, { Schema } from 'mongoose';
-import uniqueValidator from 'mongoose-unique-validator';
+// import uniqueValidator from 'mongoose-unique-validator';
 // import slugify from 'slugify';
 
 class Message {
@@ -20,22 +20,19 @@ class Message {
       },
       { timestamps: true }
     );
-    schema.pre(
-      'save',
-      function(next) {
-        let message = this;
-        if (!message.isModified('author')) {
-          return next();
-        }
-        // post.slug = slugify(post.title, '_');
-        // console.log('set slug', post.slug);
-        // return next();
-      },
-      function(err) {
-        next(err);
-      }
-    );
-    schema.plugin(uniqueValidator);
+    // schema.pre(
+    //   'save',
+    //   function(next) {
+    //     let message = this;
+    //     if (!message.isModified('author')) {
+    //       return next();
+    //     }
+    //   },
+    //   function(err) {
+    //     next(err);
+    //   }
+    // );
+    // schema.plugin(uniqueValidator);
     mongoose.model('messages', schema);
   }
 
