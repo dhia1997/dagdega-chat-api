@@ -2,9 +2,12 @@ import express from "express";
 import bodyParser from "body-parser";
 import cors from 'cors';
 import setRoutes from "./routes";
-const server = express();
-
-server.use(bodyParser.json());
-server.use(cors());
-setRoutes(server);
+import socketio from "./socket";
+import http from 'http';
+const app = express();
+const server = http.createServer(app);
+app.use(bodyParser.json());
+app.use(cors());
+setRoutes(app);
+socketio(server);
 export default server;
