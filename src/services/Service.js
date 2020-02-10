@@ -21,8 +21,7 @@ class Service {
 
       return {
         error: false,
-        deleted: true,
-        statusCode: 202,
+        statusCode: 201,
         item
       };
     } catch (error) {

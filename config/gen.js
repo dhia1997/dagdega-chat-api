@@ -1,1 +1,1 @@
-export const gen = 'sldkfhsdkjfhjsdkfhjsdkfhkdffsdfsdfssdfsdfqkxclvlk,wn;cxvwxcv^pdlfg^ddfsdf';
+export default 'sldkfhsdkjfhjsdkfhjsdkfhkdffsdfsdfssdfsdfqkxclvlk,wn;cxvwxcv^pdlfg^ddfsdf';
